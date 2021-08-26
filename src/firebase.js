@@ -30,6 +30,7 @@ export const Login = () => {
       const errorMessage = error.message;
       console.log(errorMessage);
     });
+  window.location.reload;
 };
 
 // ログイン状態の検知

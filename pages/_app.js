@@ -1,6 +1,5 @@
 import React, { useReducer, useEffect, useState } from "react";
 
-import AuthContext from "../src/AuthContext";
 import authReducer from "../src/authReducer";
 import { listenAuthState } from "../src/firebase";
 
@@ -13,11 +12,14 @@ function MyApp({ Component, pageProps }) {
     return listenAuthState(dispatch);
   }, []);
   return (
-    <AuthContext.Provider value={state}>
-      <text>weei</text>
+    <div>
       <Component {...pageProps} />
-    </AuthContext.Provider>
+    </div>
   );
 }
 
 export default MyApp;
+
+/*
+
+*/

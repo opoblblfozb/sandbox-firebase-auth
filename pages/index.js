@@ -1,10 +1,9 @@
-import { useContext } from "react";
-import AuthContext from "../src/AuthContext";
 import { Login, Logout, auth } from "../src/firebase";
 
 function IndexPage() {
-  const authuser = useContext(AuthContext);
-  console.log(authuser);
+  // const authuser = useContext(AuthContext);
+  // console.log(authuser);
+  console.log(auth.currentUser);
   return (
     <div>
       <h1>Hello Next.js 👋</h1>
@@ -14,8 +13,8 @@ function IndexPage() {
       </div>
       <div>
         <pre>
-          {authuser
-            ? authuser.displayName + "でログインしています"
+          {auth.currentUser
+            ? auth.currentUser.displayName + "でログインしています"
             : "ログインしていません"}
         </pre>
       </div>
